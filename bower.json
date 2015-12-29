@@ -1,0 +1,25 @@
+{
+  "name": "microserviceanalytics-angular",
+  "homepage": "https://www.microserviceanalytics.com",
+  "authors": [
+    "James Randall"
+  ],
+  "description": "AngularJS support for Microservice Analytics",
+  "keywords": [
+    "angularjs",
+    "analytics",
+    "microservice"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "microserviceanalytics-core": ">=0.0.0"
+  },
+  "main": "microserviceAnalyticsAngular.js"
+}
