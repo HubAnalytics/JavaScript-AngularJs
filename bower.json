@@ -16,10 +16,11 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "lib"
   ],
   "dependencies": {
-    "microserviceanalytics-core": ">=0.0.0"
+    "microserviceanalytics-core": ">=0.0.3"
   },
   "main": "microserviceAnalyticsAngular.js"
 }
