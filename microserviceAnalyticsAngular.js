@@ -3,19 +3,47 @@
 (function (analyticsInstance) {
     var global = this;
     if (global.angular) {
-        var errorHandlingModule = global.angular.module('accidentalfish.errorhandling', []);
-        errorHandlingModule.provider("$exceptionHandler", {
+        var microserviceAnalyticsModule = global.angular.module('microserviceAnalytics', []);
+        microserviceAnalyticsModule.provider("$exceptionHandler", {
             $get: function (accidentalFishExceptionLoggingService) {
                 return accidentalFishExceptionLoggingService;
             }
         });
-        errorHandlingModule.factory("accidentalFishExceptionLoggingService", ['$log', '$window', function ($log) {
+        microserviceAnalyticsModule.factory("accidentalFishExceptionLoggingService", ['$log', '$window', function ($log) {
             function error(exception, cause) {
                 $log.error.apply($log, arguments);
                 analyticsInstance.handleJavaScriptError(exception, cause);
             }
 
             return error;
+        }]);
+        microserviceAnalyticsModule.directive('microserviceAnalytics', [function() {
+            var definition = {
+                restrict: 'E',
+                replace: false,
+                scope: {
+                    propertyId: '@',
+                    propertyKey: '@',
+                    interval: '@',
+                    collectionEndPoint: '@',
+                    correlationIdPrefix: '@',
+                    autoStartJourneys: '@',
+                    httpBlacklist: '@',
+                    httpWhitelist: '@'
+                }
+            };
+            
+            function init() {
+                analyticsInstance.configure()
+            };
+            
+            definition.link = function(scope, element, attrs) {
+                scope.$watch('propertyId', function() {
+                    analyticsInstance.configure(scope);
+                });
+            };
+            
+            return definition;
         }]);
     }
 }).call(this, this.microserviceAnalytics);
