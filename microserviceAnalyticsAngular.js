@@ -1,6 +1,6 @@
 // JavaScript source code
 // AngularJS support
-(function () {
+(function (analyticsInstance) {
     var global = this;
     if (global.angular) {
         var errorHandlingModule = global.angular.module('accidentalfish.errorhandling', []);
@@ -12,10 +12,10 @@
         errorHandlingModule.factory("accidentalFishExceptionLoggingService", ['$log', '$window', function ($log) {
             function error(exception, cause) {
                 $log.error.apply($log, arguments);
-                analytics.handleJavaScriptError(exception, cause);
+                analyticsInstance.handleJavaScriptError(exception, cause);
             }
 
             return error;
         }]);
     }
-}).call();
+}).call(this, this.microserviceAnalytics);
