@@ -20,7 +20,7 @@
     "lib"
   ],
   "dependencies": {
-    "microserviceanalytics-core": ">=0.0.3"
+    "microserviceanalytics-core": ">=0.0.5"
   },
   "main": "microserviceAnalyticsAngular.js"
 }

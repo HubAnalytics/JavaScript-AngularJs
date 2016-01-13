@@ -25,7 +25,7 @@
                     propertyId: '@',
                     propertyKey: '@',
                     interval: '@',
-                    collectionEndPoint: '@',
+                    collectionEndpoint: '@',
                     correlationIdPrefix: '@',
                     autoStartJourneys: '@',
                     httpBlacklist: '@',
