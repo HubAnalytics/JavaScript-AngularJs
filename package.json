@@ -1,8 +1,8 @@
 {
-  "name": "microserviceanalyticscore",
+  "name": "microserviceanalyticsangular",
   "version": "1.0.0",
-  "description": "Core JavaScript for the MicroserviceAnalytics solution",
-  "main": "microserviceAnalyticsCore.js",
+  "description": "Angular packaget for the MicroserviceAnalytics solution",
+  "main": "microserviceAnalyticsAngular.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

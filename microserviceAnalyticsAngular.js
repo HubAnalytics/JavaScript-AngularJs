@@ -24,10 +24,12 @@
                 scope: {
                     propertyId: '@',
                     propertyKey: '@',
-                    interval: '@',
+                    uploadIntervalMs: '=',
+                    correlationEnabled: '=',
                     collectionEndpoint: '@',
+                    correlationIdKey: '@',
                     correlationIdPrefix: '@',
-                    autoStartJourneys: '@',
+                    autoStartJourneys: '=',
                     httpBlacklist: '@',
                     httpWhitelist: '@'
                 }
