@@ -31,7 +31,11 @@
                     correlationIdPrefix: '@',
                     autoStartJourneys: '=',
                     httpBlacklist: '@',
-                    httpWhitelist: '@'
+                    httpWhitelist: '@',
+                    userIdProvider: '&?',
+                    userIdKey: '@',
+                    sessionIdProvider: '&?',
+                    sessionIdKey: '@'
                 }
             };
             
