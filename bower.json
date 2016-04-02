@@ -21,7 +21,7 @@
     "samples"
   ],
   "dependencies": {
-    "microserviceanalytics-core": ">=0.5.0"
+    "microserviceanalytics-core": ">=0.6.0"
   },
   "main": "microserviceAnalyticsAngular.js"
 }
