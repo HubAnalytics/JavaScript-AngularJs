@@ -17,7 +17,7 @@
 
             return error;
         }]);
-        microserviceAnalyticsModule.directive('microserviceAnalytics', [function() {
+        microserviceAnalyticsModule.directive('microserviceAnalytics', ['$rootScope', '$location', function($rootScope, $location) {
             var definition = {
                 restrict: 'E',
                 replace: false,
@@ -39,13 +39,28 @@
                 }
             };
             
-            function init() {
-                analyticsInstance.configure()
-            };
-            
             definition.link = function(scope, element, attrs) {
+                var headCorrelationId = null;
+                
                 scope.$watch('propertyId', function() {
+                    scope.corePageViewReportingEnabled = false;
                     analyticsInstance.configure(scope);
+                    analyticsInstance.getContextualCorrelationId = function() {
+                        return headCorrelationId;
+                    }
+                    $rootScope.$on('$viewContentLoaded', function(ev, route) {
+                        var page = $location.absUrl();
+                        setTimeout(function() { headCorrelationId = null }, 1);
+                    });
+                    $rootScope.$on('$routeChangeSuccess', function(ev, route) {
+                        headCorrelationId = analyticsInstance.createCorrelationId();
+                        var page = $location.absUrl();
+                        var additionalData = {
+                            Controller: route.$$route ? route.$$route.controller : undefined,
+                            Action: route.$$route ? route.$$route.templateUrl : undefined
+                        }
+                        analyticsInstance.pageView(page, additionalData);                                                
+                    });                                    
                 });
             };
             
