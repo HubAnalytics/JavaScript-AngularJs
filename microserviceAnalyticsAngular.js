@@ -36,8 +36,8 @@
                     userIdKey: '@',
                     sessionIdProvider: '&?',
                     sessionIdKey: '@',
-                    useTrackingLocalStorage: '=',
-                    useTrackingCookies: '='
+                    useTrackingLocalStorage: '&?',
+                    useTrackingCookies: '&?'
                 }
             };
             
