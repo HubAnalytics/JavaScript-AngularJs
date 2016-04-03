@@ -35,14 +35,19 @@
                     userIdProvider: '&?',
                     userIdKey: '@',
                     sessionIdProvider: '&?',
-                    sessionIdKey: '@'
+                    sessionIdKey: '@',
+                    useTrackingLocalStorage: '=',
+                    useTrackingCookies: '='
                 }
             };
             
             definition.link = function(scope, element, attrs) {
                 var headCorrelationId = null;
-                
                 scope.$watch('propertyId', function() {
+                    // angular apps favour local storage and disable cookie scans
+                    if (scope.useTrackingCookies === undefined) {
+                        scope.useTrackingCookies = false;
+                    }
                     scope.corePageViewReportingEnabled = false;
                     analyticsInstance.configure(scope);
                     analyticsInstance.getContextualCorrelationId = function() {
