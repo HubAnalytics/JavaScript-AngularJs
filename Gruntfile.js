@@ -18,7 +18,7 @@ module.exports = function (grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: ['tmp/bower.js', 'microserviceAnalyticsAngular.js'],
+                src: ['tmp/bower.js', 'hubAnalyticsAngular.js'],
                 dest: 'lib/<%= pkg.name %>.<%= versionFile.version %>.min.js'
             }
         },

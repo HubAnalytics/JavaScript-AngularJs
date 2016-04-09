@@ -1,10 +1,10 @@
 {
-  "name": "microserviceanalytics-angular",
+  "name": "hubanalytics-angular",
   "homepage": "https://www.microserviceanalytics.com",
   "authors": [
     "James Randall"
   ],
-  "description": "AngularJS support for Microservice Analytics",
+  "description": "AngularJS support for Hub Analytics",
   "keywords": [
     "angularjs",
     "analytics",
@@ -21,7 +21,7 @@
     "samples"
   ],
   "dependencies": {
-    "microserviceanalytics-core": ">=0.7.0"
+    "hubanalytics-core": ">=0.8.0"
   },
-  "main": "microserviceAnalyticsAngular.js"
+  "main": "hubAnalyticsAngular.js"
 }

@@ -1,8 +1,8 @@
 {
-  "name": "microserviceanalyticsangular",
+  "name": "hubanalyticsangular",
   "version": "1.0.0",
-  "description": "Angular packaget for the MicroserviceAnalytics solution",
-  "main": "microserviceAnalyticsAngular.js",
+  "description": "Angular package for the HubAnalytics solution",
+  "main": "hubAnalyticsAngular.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

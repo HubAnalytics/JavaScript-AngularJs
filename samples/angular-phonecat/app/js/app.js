@@ -9,7 +9,7 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatControllers',
   'phonecatFilters',
   'phonecatServices',
-  'microserviceAnalytics',
+  'hubAnalytics',
 ]);
 
 phonecatApp.config(['$routeProvider',
