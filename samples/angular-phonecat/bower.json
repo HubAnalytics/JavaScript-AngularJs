@@ -13,6 +13,6 @@
     "angular-route": "1.4.x",
     "angular-resource": "1.4.x",
     "angular-animate": "1.4.x",
-    "hubanalytics-core": "^0.4.0"
+    "hubanalytics-core": "^0.9.0"
   }
 }
